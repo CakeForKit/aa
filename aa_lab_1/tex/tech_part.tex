@@ -1,0 +1,199 @@
+\chapter{Технологическая часть}
+В данном разделе будут приведены средства реализации, листинг кода и функциональные тесты.
+
+\section{Средства реализации}
+В данной работе для реализации был выбран язык программирования $Python$\cite{python-city}, так как он удовлетворяет требованиям лабраторной работы: может замерить процессорное время (с помошью функции $process\_time\_ns(...)$ из библиотеки $time$\cite{python-time})
+
+\section{Реализация алгоритмов}
+В листингах \ref{lst:lev_rec}-\ref{lst:damerau_lev_matrix} представлены реализации алгоритмов нахождения расстояния Левенштейна и Дамерау--Левенштейна.
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:lev_rec,caption=Рекурсивный алгоритм нахождения расстояния Левенштейна]
+		def lev_recurs_(s1, s2, i, j):
+			if i == 0:
+				return j
+			if j == 0:
+				return i
+			
+			flag = 0 if s1[i - 1] == s2[j - 1] else 1
+			
+			variants = [
+				lev_recurs_(s1, s2, i, j - 1) + 1,
+				lev_recurs_(s1, s2, i - 1, j) + 1,
+				lev_recurs_(s1, s2, i - 1, j - 1) + flag
+			]
+			return min(variants)
+		
+		
+		def lev_recurs(s1, s2):
+			return lev_recurs_(s1, s2, len(s1), len(s2))
+	\end{lstlisting}
+\end{center}
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:lev_cache, caption=Рекурсивный алгоритм нахождения расстояния Левенштейна с использованием кеша]
+	def lev_cache_matrix(s1, s2, i, j, matrix):
+		if matrix[i][j] != -1:
+			return matrix[i][j]
+		
+		if i == 0:
+			matrix[i][j] = j
+			return j
+		if j == 0:
+			matrix[i][j] = i
+			return i
+		
+		flag = 0 if s1[i - 1] == s2[j - 1] else 1
+		variants = [
+			lev_cache_matrix(s1, s2, i, j - 1, matrix) + 1,
+			lev_cache_matrix(s1, s2, i - 1, j, matrix) + 1,
+			lev_cache_matrix(s1, s2, i - 1, j - 1, matrix) + flag,
+		]
+		matrix[i][j] = min(variants)
+		
+		return matrix[i][j]
+	
+	
+	def lev_cache(s1, s2, printing=False):
+		i, j = len(s1), len(s2)
+		matrix = []
+		for i in range(len(s1) + 1):
+			matrix.append([-1] * (len(s2) + 1))
+		
+		res = lev_cache_matrix(s1, s2, i, j, matrix)
+		if printing:
+			for i in range(len(s1) + 1):
+				print(matrix[i])
+		return res
+	\end{lstlisting}
+\end{center}
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:lev_mat, caption=Матричный алгоритм нахождения расстояния Левенштейна]
+	def lev_mat(s1, s2, printing=False):
+		mat = [[i for i in range(len(s2) + 1)]]
+		if printing: print(mat[0])
+		for i in range(len(s1)):
+			mat.append([i + 1])
+			i += 1
+			for j in range(1, len(s2) + 1):
+				flag = 0 if s1[i - 1] == s2[j - 1] else 1
+				new = min(
+					mat[i][j - 1] + 1,
+					mat[i - 1][j] + 1,
+					mat[i - 1][j - 1] + flag
+				)
+		
+		mat[i].append(new)
+		
+		if printing: print(mat[i])
+			return mat[-1][-1]
+	\end{lstlisting}
+\end{center}
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:damerau_lev_matrix, caption=Алгоритм нахождения расстояния Дамерау--Левенштейна]
+		def damerau_lev_matrix(s1, s2, i, j, matrix):
+		if matrix[i][j] != -1:
+			return matrix[i][j]
+		
+		if i == 0:
+			matrix[i][j] = j
+			return j
+		if j == 0:
+			matrix[i][j] = i
+			return i
+		
+		flag = 0 if s1[i - 1] == s2[j - 1] else 1
+		variants = [
+			damerau_lev_matrix(s1, s2, i, j - 1, matrix) + 1,
+			damerau_lev_matrix(s1, s2, i - 1, j, matrix) + 1,
+			damerau_lev_matrix(s1, s2, i - 1, j - 1, matrix) + flag,
+		]
+		if i > 1 and j > 1 and s1[i - 1] == s2[j - 2] and s1[i - 2] == s2[j - 1]:
+			variants.append(
+				damerau_lev_matrix(s1, s2, i - 2, j - 2, matrix) + 1
+			)
+		matrix[i][j] = min(variants)
+		
+		return matrix[i][j]
+		
+		
+		def damerau_lev(s1, s2, printing=False):
+			i, j = len(s1), len(s2)
+			matrix = []
+			for i in range(len(s1) + 1):
+				matrix.append([-1] * (len(s2) + 1))
+			
+			res = damerau_lev_matrix(s1, s2, i, j, matrix)
+			if printing:
+				for i in range(len(s1) + 1):
+					print(matrix[i])
+			return res
+	\end{lstlisting}
+\end{center}
+
+
+\section{Классы эквивалентности тестирования}
+
+Для тестирования были выделены следующие классы тестирования:
+\begin{enumerate}
+	\item {Пустые строки}
+	\item {Одна строка пустая, другая нет}
+	\item {Строки равной длины}
+	\item {Анаграммы} 
+	\item {Расстояния, которые вычислены алгоритмами Левенштейна и ДамерауЛевенштейна, равны}
+	\item {Расстояния, которые вычислены алгоритмами Левенштейна и ДамерауЛевенштейна, дают разные результаты}
+\end{enumerate}
+
+\section{Функциональные тесты}
+В таблице \ref{tbl:functional_test} приведены функциональные тесты для алгоритмов нахождения расстояния Левенштейна и Дамерау--Левенштейна. 
+
+Все тесты пройдены успешно.
+
+\FloatBarrier
+\begin{table}[h]
+	\begin{center}
+		\begin{threeparttable}
+			\captionsetup{justification=raggedright,singlelinecheck=off}
+			\caption{\label{tbl:functional_test} Функциональные тесты}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				& & & \multicolumn{2}{c|}{Результат} \\
+				\hline
+				№ & Строка 1 & Строка 2 & Левенштейн & Дамерау--Л. \\
+				\hline
+				1&"Пустая строка"&"Пустая строка"&0&0 \\
+				\hline
+				2&"Пустая строка"&Слово&5&5 \\
+				\hline
+				3&Мука&"Пустая строка"&4&4 \\
+				\hline
+				4&мука&река&2&2 \\
+				\hline
+				5&абвг&гбав&3&3 \\
+				\hline
+				6&123&123456&3&3 \\
+				\hline
+				7&1234&2134&2&1 \\
+				\hline
+			\end{tabular}
+		\end{threeparttable}
+	\end{center}
+\end{table}
+\FloatBarrier
+
+
+\section*{Вывод}
+
+Были представлены листинги всех описанных ренее алгоритмов нахождения расстояния Левенштейна и Дамерау--Левенштейна и их тесты.
+
+\clearpage

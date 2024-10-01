@@ -1,0 +1,101 @@
+\chapter{Технологическая часть}
+В данном разделе будут приведены средства реализации, листинг кода и функциональные тесты.
+
+\section{Средства реализации}
+В данной работе для реализации был выбран язык программирования $Python$\cite{python-city}, так как он удовлетворяет требованиям лабраторной работы: поддерживает динамические структуры данных,
+такие как массивы и имеет библиотеку $Matplotlib$\cite{matplotlib-lib} для построения графиков.
+
+
+\section{Реализация алгоритмов}
+В листингах \ref{lst:completeSearch}-\ref{lst:binSearch} представлены реализации алгоритмов поиска элемента в массиве.
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:completeSearch,caption=Алгоритм поиска элемента в массиве полным перебором]
+		def completeSearch(arr, x, printing=False):
+			count_cmp = 0
+			for i in range(len(arr)):
+				count_cmp += 2
+				if arr[i] == x:
+					return i, count_cmp
+			return -1, count_cmp
+	\end{lstlisting}
+\end{center}
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:binSearch, caption=Алгоритма поиска элемента в массиве бинарным поиском]
+	def binSearch(arr, x, printing=False):
+		arr.sort()
+		n = len(arr)
+		l, r = 0, n - 1
+		m = n // 2
+		
+		count_cmp = 0
+		while arr[m] != x and l <= r:
+			count_cmp += 3
+			if x > arr[m]:
+				l = m + 1
+			else:
+				r = m - 1
+			m = (r + l) // 2
+	count_cmp += 3
+	if l > r:
+		return -1, count_cmp
+	else:
+		return m, count_cmp
+	\end{lstlisting}
+\end{center}
+
+\section{Классы эквивалентности тестирования}
+
+Для тестирования были выделены следующие классы тестирования:
+\begin{enumerate}
+	\item {Пустой массив};
+	\item {Искомый элемент -- первый};
+	\item {Искомый элемент -- последний};
+	\item {Искомый элемент -- в середине массива};
+	\item {Искомого элемена -- нет};
+\end{enumerate}
+
+\section{Функциональные тесты}
+В таблице \ref{tbl:functional_test} приведены функциональные тесты для алгоритмов поиска элемента $x$ в массиве $arr = [4, 5, 12, 13, 13, 18, 22, 26, 30, 35]$. 
+
+Все тесты пройдены успешно.
+
+\FloatBarrier
+\begin{table}[h]
+	\begin{center}
+		\begin{threeparttable}
+			\captionsetup{justification=raggedright,singlelinecheck=off}
+			\caption{\label{tbl:functional_test} Функциональные тесты}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				& & & \multicolumn{2}{c|}{Результат} \\
+				\hline
+				№ & x & Массив & Поный перебор & Бинарный поиск \\
+				\hline
+				1& 4 & "Пустой массив" & -1 & -1 \\
+				\hline
+				2& 4 & arr & 0 & 0 \\
+				\hline
+				3& 5 & arr &4&4 \\
+				\hline
+				4& 35 & arr &9&9 \\
+				\hline
+				5& 18 & arr &5&5 \\
+				\hline
+			\end{tabular}
+		\end{threeparttable}
+	\end{center}
+\end{table}
+\FloatBarrier
+
+
+\section*{Вывод}
+
+Были представлены листинги всех описанных ренее алгоритмов поиска элемента в массиве и их тесты.
+
+\clearpage

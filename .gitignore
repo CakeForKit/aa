@@ -1,0 +1,12 @@
+venv
+.idea
+*.bkp
+*.aux
+*.log
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+
