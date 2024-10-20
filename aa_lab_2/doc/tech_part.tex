@@ -1,0 +1,368 @@
+\chapter{Технологическая часть}
+В данном разделе будут приведены средства реализации, листинг кода, функциональные тесты, модель вычислений и трудоемкость алгоритмов.
+
+\section{Средства реализации}
+В данной работе для реализации был выбран язык программирования $Python$\cite{python-city}, так как он удовлетворяет требованиям лабраторной работы: поддерживает динамические структуры данных,
+такие как массивы и имеет библиотеку $Matplotlib$\cite{matplotlib-lib} для построения графиков.
+
+
+\section{Реализация алгоритмов}
+В листингах \ref{lst:standard_matrix_mul}-\ref{lst:new_vinograd_matrix_mul} представлены реализации алгоритмов поиска элемента в массиве.
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:standard_matrix_mul,caption=Стандартный алгоритм умножения матриц]
+		def standard_matrix_mul(mat1, rows1, cols1, mat2, rows2, cols2, res):
+			for i in range(rows1):
+				for j in range(cols2):
+				res[i][j] = 0
+				for k in range(cols1):
+					res[i][j] += mat1[i][k] * mat2[k][j]
+	\end{lstlisting}
+\end{center}
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:vinograd_matrix_mul, caption=Алгоритм Винограда]
+	def vinograd_matrix_mul(mat1, rows1, cols1, mat2, rows2, cols2, res):
+		help_mat1 = [0] * rows1
+		help_mat2 = [0] * cols2
+		
+		for i in range(rows1):
+			for j in range(cols1 // 2):
+				help_mat1[i] += mat1[i][2 * j] * mat1[i][2 * j + 1]
+		
+		for i in range(cols2):
+			for j in range(cols1 // 2):
+				help_mat2[i] += mat2[2 * j][i] * mat2[2 * j + 1][i]
+		
+		for i in range(rows1):
+			for j in range(cols2):
+			res[i][j] = -help_mat1[i] - help_mat2[j]
+			for k in range(cols1 // 2):
+				res[i][j] += (mat1[i][2 * k] + mat2[2 * k + 1][j]) * (mat1[i][2 * k + 1] + mat2[2 * k][j])
+			
+		if cols1 % 2 != 0:
+			for i in range(rows1):
+				for j in range(cols2):
+					res[i][j] += mat1[i][-1] * mat2[-1][j]
+	\end{lstlisting}
+\end{center}
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:new_vinograd_matrix_mul, caption=Оптимизированный алгоритм Винограда]
+	def new_vinograd_matrix_mul(mat1, rows1, cols1, mat2, rows2, cols2, res):
+		help_mat1 = [0] * rows1
+		help_mat2 = [0] * cols2
+		
+		for i in range(rows1):
+			for j in range(1, cols1, 2):
+				help_mat1[i] -= mat1[i][j - 1] * mat1[i][j]
+		
+		for i in range(cols2):
+			for j in range(1, cols1, 2):
+				help_mat2[i] -= mat2[j - 1][i] * mat2[j][i]
+		
+		for i in range(rows1):
+			for j in range(cols2):
+				res[i][j] = help_mat1[i] + help_mat2[j]
+				for k in range(1, cols1, 2):
+					res[i][j] += (mat1[i][k - 1] + mat2[k][j]) * (mat1[i][k] + mat2[k - 1][j])
+				if cols1 % 2 != 0:
+					res[i][j] += mat1[i][-1] * mat2[-1][j]
+	\end{lstlisting}
+\end{center}
+
+
+
+\section{Модель вычислений}
+
+Для вычисления трудоемкости алгоритмов была введена модель вычислений:
+
+\begin{enumerate}
+	\item Операции из списка (\ref{for:opers1}) имеют трудоемкость 1:
+	\begin{equation}
+		\label{for:opers1}
+		=, +, -, +=, -=, ==, !=, <, <=, >, >=, [], <<, >>, and, or
+	\end{equation}
+	\item Операции из списка (\ref{for:opers2}) имеют трудоемкость 2:
+	\begin{equation}
+		\label{for:opers2}
+		*, /, //, \%, *=, /=, //=, *= 
+	\end{equation}
+	\item Пусть трудоемкость условного перехода = 0, тогда трудоемкость условного оператора вида \code{if условие then блок1 else блок2} рассчитывается, как (\ref{for:if}):
+	\begin{equation}
+		\label{for:if}
+		f_{if} = f_{\text{условия}} +
+		\begin{cases}
+			min(f_{блок1}, f_{блок2}), & \text{л. с. (лучший случай),}\\
+			max(f_{блок1}, f_{блок2}), & \text{х. с. (худший случай).}
+		\end{cases}
+	\end{equation}
+	\item Трудоемкость цикла c $N$ шагами рассчитывается, как (\ref{for:for});
+	\begin{equation}
+		\label{for:for}
+		f_{for} = f_{\text{инициализации}} + f_{\text{сравнения}} + N(f_{\text{инкремента}} + f_{\text{сравнения}} + f_{\text{тела}})
+	\end{equation}
+	\item трудоемкость вызова функции равна 0.
+\end{enumerate}
+
+
+\section{Трудоемкость алгоритмов}
+
+Трудоемкость реализованных алгоритмов умножения матриц:
+
+\subsection{Стандартный алгоритм умножения матриц}
+
+Для стандартного алгоритма умножения матриц размером $M \times N$ и  $N \times Q$ трудоемкость состоит из:
+
+\begin{itemize}
+	\item внешнего цикла по $i \in [1..M]$, трудоемкость которого: $f = 2 + M \cdot (2 + f_{тела})$;
+	\item цикла по $j \in [1..Q]$, трудоемкость которого: $f = 2 + Q \cdot (2 + f_{тела})$;
+	\item инициализации элемента результирующей матрицы в строке $i$ и столбце $j$ нулем: $f = 3$;
+	\item цикла по $k \in [1..N]$, трудоемкость которого: $f = 2 + 14N$. \newline
+\end{itemize}
+
+Поскольку трудоемкость стандартного алгоритма равна трудоемкости внешнего цикла, то:
+
+\begin{equation}
+	\label{for:standard0}
+	f_{standard} = 2 + M \cdot (4 + Q \cdot (2 + 3 + 2 + N(2 + 12)));
+\end{equation}
+
+\begin{equation}
+	\label{for:standard}
+	f_{standard} = 14MNQ + 7MQ + 4M + 2 \approx 14MNQ;
+\end{equation}
+
+
+\subsection{Алгоритм Винограда}
+
+Для алгоритма Винограда трудоемкость состоит из:
+
+\begin{itemize}
+	\item Заполнения вспомагательного массива a\_tmp, трудоемкость которого (\ref{for:ATMP}):
+	\begin{equation}
+		\label{for:ATMP}
+		f_{a\_tmp} = 2 + M (2 + 4 + \frac{N}{2} (4 + 4 + 11)) = \frac{19}{2}MN + 6M + 2;
+	\end{equation}
+	
+	\item Заполнения вспомагательного массива b\_tmp, трудоемкость которого (\ref{for:BTMP}):
+	\begin{equation}
+		\label{for:BTMP}
+		f_{b\_tmp} = 2 + Q (2 + 4 + \frac{N}{2} (4 + 4 + 11)) = \frac{19}{2}QN + 6Q + 2;
+	\end{equation}
+	
+	\item Цикла заполнения результирующей матрицы, трудоемкость которого (\ref{for:cycle}):
+	\begin{equation}
+		\label{for:cycle0}
+		f_{c} = 2 + M (2 + 2 + Q (2 + 7 + 4 + \frac{N}{2} (4 + 6 + 22)));
+	\end{equation}
+	\begin{equation}
+		\label{for:cycle}
+		f_{c} = \frac{32}{2}MNQ + 13MQ + 4M + 2;
+	\end{equation}
+	
+	\item Дополнительного цикла в случае если N не четная, трудоемкость которого (\ref{for:last}):
+	\begin{equation}
+	\begin{aligned}
+		\label{for:last0}
+		f_{last} &= 3 + \\
+		&+ \begin{cases}
+			0, & \text{л. с.,}\\
+			2 + M(2 + 2 + Q(2 + 11)), & \text{х. с. при N \% 2 == 1}
+		\end{cases}
+	\end{aligned}
+	\end{equation}
+	\begin{equation}
+		\label{for:last}
+		f_{last} = 3 + \begin{cases}
+			0, & \text{л. с.,}\\
+			13MQ + 4M + 2, & \text{х. с. при N \% 2 == 1}
+		\end{cases}
+	\end{equation}
+\end{itemize}
+
+Тогда трудоемкость алгоритма Винограда составит (\ref{for:vin}):
+
+\begin{equation}
+	\label{for:vin0}
+	f_{vin} =  f_{a\_tmp} + f_{b\_tmp} + f_{c} + f_{last}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+	\label{for:vin}
+	f_{vin} &=  16MNQ + \frac{19}{2}QN + \frac{19}{2}MN + \\
+	&+ 10M + 6Q + 13MQ + 6 + \\
+	&+ \begin{cases}
+		0, & \text{л. с.,}\\
+		13MQ + 4M + 2, & \text{х. с. при N \% 2 == 1}
+	\end{cases}
+\end{aligned}
+\end{equation}
+
+\subsection{Оптимизированный алгоритм Винограда}
+
+Оптимизация заключается в:
+\begin{itemize}
+	\item инкремент счётчика наиболее вложенного цикла на 2;
+	\item объединение III и IV частей алгоритма Винограда;
+	\item введение декремента при вычислении вспомогательных массивов;
+\end{itemize}
+
+Тогда трудоемкость оптимизированного алгоритма Винограда состоит из:
+
+\begin{itemize}
+	\item Заполнения массивa a\_tmp (\ref{for:na}):
+	\begin{equation}
+		\label{for:na}
+		f_{a\_tmp} =  2 + M(2 + 2 + \frac{N}{2}(2 + 9)) = \frac{11}{2}MN + 4M + 2
+	\end{equation}
+	
+	\item Заполнения массивa b\_tmp (\ref{for:nb}):
+	\begin{equation}
+		\label{for:nb}
+		f_{b\_tmp} =  2 + Q(2 + 2 + \frac{N}{2}(2 + 9)) = \frac{11}{2}QN + 4M + 2
+	\end{equation}
+	
+	\item Цикла заполнения результирующей матрицы с учетом случая когда N нечетная, трудоемкость которого (\ref{for:impr_cycle}):
+	\begin{equation}
+	\begin{aligned}
+		\label{for:impr_cycle0}
+		f_{c} &= 2 + M (2 + 2 + Q(2 + 6 + 2 + \frac{N}{2}(2 + 20) + \\
+		& + 3 + 
+		\begin{cases}
+			0, & \text{л. с.,}\\
+			12, & \text{х. с. при N \% 2 == 1}
+		\end{cases}
+		));
+	\end{aligned}
+	\end{equation}
+	
+	\begin{equation}
+	\begin{aligned}
+		\label{for:impr_cycle}
+		f_{c} &= 11MNQ + 13MQ + 4M + 2 + \\
+		&+ MQ
+		\begin{cases}
+			0, & \text{л. с.,}\\
+			12, & \text{х. с. при N \% 2 == 1}
+		\end{cases}
+	\end{aligned}
+	\end{equation}
+\end{itemize}
+
+
+Тогда трудоемкость оптимизированного алгоритма Винограда составит (\ref{for:nvin}):
+\begin{equation}
+\begin{aligned}
+	\label{for:nvin}
+	f_{new_vin} &=  11MNQ + 13MQ + \frac{11}{2}QN + \\
+	&\frac{11}{2}MN + 12M + 6 + MQ
+	\begin{cases}
+		0, & \text{л. с.,}\\
+		12, & \text{х. с. при N \% 2 == 1}
+	\end{cases}
+\end{aligned}
+\end{equation}
+
+\section{Классы эквивалентности тестирования}
+
+Для тестирования были выделены следующие классы тестирования:
+\begin{enumerate}
+	\item {Пустые матрицы};
+	\item {Матрицы размером 1х1};
+	\item {Матрицы размером 3х2 и 2х3};
+	\item {Матрицы размером 3х3 и 3х3};
+\end{enumerate}
+
+\section{Функциональные тесты}
+В таблице \ref{tbl:functional_test} приведены функциональные тесты для алгоритмов умножения матриц.
+
+Все тесты пройдены успешно.
+
+\FloatBarrier
+\begin{table}[h]
+	\begin{center}
+		\begin{threeparttable}
+			\captionsetup{justification=raggedright,singlelinecheck=off}
+			\caption{\label{tbl:functional_test} Функциональные тесты}
+			\begin{tabular}{|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|}
+				\hline
+				Матрица 1 & Матрица 2 & Ожидаемый результат \\ 
+				\hline
+				
+				$\begin{pmatrix}
+					&
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					&
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					&
+				\end{pmatrix}$ \\ \hline
+				
+				$\begin{pmatrix}
+					1
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					2
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					2
+				\end{pmatrix}$ \\ \hline
+				
+				$\begin{pmatrix}
+					2 & 3 \\
+					4 & 5 \\
+					6 & 7 
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					10 & 11 & 12\\
+					20 & 21 & 23
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					80 & 85 & 93 \\
+					140 & 149 & 163 \\
+					200 & 213 & 233
+				\end{pmatrix}$ \\ \hline
+				
+				$\begin{pmatrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					1 & 0 & 0 \\
+					0 & 1 & 0 \\
+					0 & 0 & 1
+				\end{pmatrix}$ &
+				$\begin{pmatrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{pmatrix}$ \\ \hline
+				
+				
+				
+			\end{tabular}
+		\end{threeparttable}
+	\end{center}
+	
+\end{table}
+\FloatBarrier
+
+
+\section*{Вывод}
+
+Были представлены средства реализации, листинг кода, функциональные тесты, модель вычислений и трудоемкость алгоритмов.
+
+По результатам вычисления трудоемкости алгоритмов оптимизированный алгоритм Винограда должен работать быстрее остальных, а неоптимизированный алгоритм Винограда медленнее. ($f_{new_vin} < f_{std} < f_{vin}$, $11MNQ < 14MNQ < 16MNQ$)
+
+
+\clearpage
