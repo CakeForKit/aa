@@ -1,0 +1,193 @@
+\chapter{Технологическая часть}
+
+В данном разделе представлены средства реализации, листинги муравьиного алгоритма, алгоритма основанного на полном переборе и функциональные тесты.
+
+\section{Средства реализации}
+В данной работе для реализации был выбран язык программирования $Python$\cite{python-city}, так как он удовлетворяет требованиям лабраторной работы: может замерить процессорное время (с помошью функции $process\_time\_ns(...)$ из библиотеки $time$\cite{python-time})
+
+В данной работе для реализации был выбран язык программирования $Python$\cite{python-city}, так как он удовлетворяет требованиям лабраторной работы: поддерживает динамические структуры данных,
+такие как массивы, имеет библиотеки $GeoPy$\cite{GeoPy} для вычисления расстояния городами и  $Matplotlib$\cite{matplotlib-lib} для построения графиков и может замерить процессорное время (с помошью функции $process\_time\_ns(...)$ из библиотеки $time$\cite{python-time})
+
+
+\section{Реализация алгоритмов}
+В листингах \ref{lst:lst1}-\ref{lst:lst2} представлены реализации алгоритма основанного на полном переборе и муравьиного алгоритма.
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:lst1,caption=Реализация алгоритма основанного на полном переборе]
+def all_combs(graph : CitiesMap):
+	lenpath = len(graph)
+	inds = [i for i in range(1, lenpath)]
+	
+	minDist = float('inf')
+	goodPath = []
+	for path in permutations(inds):
+		path = [0] + list(path)
+		dist = 0
+		for i in range(lenpath - 1):
+			dist += graph[path[i]][path[i + 1]]
+		dist += graph[path[0]][path[-1]]
+		
+		if dist < minDist:
+			minDist = dist
+			goodPath = path[:]
+	
+	return (minDist, goodPath)
+	\end{lstlisting}
+\end{center}
+
+\begin{center}
+	\captionsetup{justification=raggedright,singlelinecheck=off}
+	\renewcommand{\lstlistingname}{Листинг}
+	\begin{lstlisting}[label=lst:lst2, caption=Реализация муравьиного алгоритма]
+class Ant:
+	def __init__(self, istart, cmap: CitiesMap, pheromones, greedy):
+		self.path = self.generatePath(istart, cmap, pheromones, greedy)
+		self.lenPath = self.calcLenPath(cmap, self.path)
+	
+	def getPath(self):
+		return self.path[:]
+	
+	def getLenPath(self):
+		return self.lenPath
+
+	def generatePath(self, istart, cmap: CitiesMap, pheromones, greedy, printing=False):
+		path = [istart]
+		ncities = len(cmap)
+		while len(path) != ncities:
+			probPaths = [0] * ncities
+			for i in range(ncities):
+				if i in path:
+					probPaths[i] = 0
+				else:
+					ist = path[-1]
+					probPaths[i] = cmap.attractiveness(ist, i) ** greedy * \
+						pheromones[ist][i] ** (1 - greedy)
+			sumProbPaths = sum(probPaths)
+			for i in range(ncities):
+				probPaths[i] /= sumProbPaths
+			
+			r = random.random()
+			last = 0
+			lines = []
+			for i in range(len(probPaths)):
+				lines.append((last, last + probPaths[i]))
+				last = last + probPaths[i]
+
+			i = 0
+			while not( lines[i][0] <= r < lines[i][1] ):
+				i += 1
+			ind = i
+
+
+			path.append(ind)
+		return path
+
+	def calcLenPath(self, cmap, path):
+		lenPath = 0
+		for i in range(len(cmap) - 1):
+			lenPath += cmap[path[i]][path[i + 1]]
+		lenPath += cmap[path[-1]][path[0]]
+		return lenPath
+
+class Pheromones:
+	min_ph = 0.01
+	def __init__(self, size):
+		self.phmap = []
+		for i in range(size):
+			self.phmap.append([1 for _ in range(size)])
+			self.phmap[i][i] = 0
+	
+	def __getitem__(self, item):
+		return self.phmap[item]
+
+	def update(self, ants, lenBestPath, cmap: CitiesMap, evaporation, printing=False):
+		deltaMap = [[0 for i in range(len(cmap))] for _ in range(len(cmap))]
+		
+		for a in ants:
+			path = a.getPath()
+			delta = cmap.day_pheromone / a.getLenPath()
+			for i in range(len(path) - 1):
+				deltaMap[path[i]][path[i + 1]] += self.phmap[path[i]][path[i + 1]] * (1 - evaporation) + delta
+				deltaMap[path[i + 1]][path[i]] = deltaMap[path[i]][path[i + 1]]
+
+
+			deltaMap[path[0]][path[-1]] += self.phmap[path[i]][path[i + 1]] * (1 - evaporation) + delta
+			deltaMap[path[-1]][path[0]] = deltaMap[path[0]][path[-1]]
+
+		for i in range(len(cmap)):
+			for j in range(i):
+				self.phmap[i][j] = max(self.min_ph, deltaMap[i][j])
+				self.phmap[j][i] = self.phmap[i][j]
+
+def ant_alg(cmap: CitiesMap, greedy, evaporation, t_max):
+	bestPath = []
+	lenBestPath = float('inf')
+	pheromones = Pheromones(len(cmap))
+	
+	for t in range(t_max):
+		ants = [Ant(i, cmap, pheromones, greedy) for i in range(len(cmap))]
+		for a in ants:
+			if a.getLenPath() < lenBestPath:
+				bestPath = a.getPath()
+				lenBestPath = a.getLenPath()
+		pheromones.update(ants, lenBestPath, cmap, evaporation)
+
+	return (lenBestPath, bestPath)
+	\end{lstlisting}
+\end{center}
+
+
+\section{Классы эквивалентности тестирования}
+
+Для тестирования были выделены следующие классы тестирования:
+\begin{enumerate}
+	\item {Граф пустой};
+	\item {Граф с 1 вершиной};
+	\item {Граф с 2 вершинами};
+	\item {Граф с 3 вершинами};
+\end{enumerate}
+
+\section{Функциональные тесты}
+В таблице \ref{tbl:functional_test} приведены функциональные тесты для алгоритмов умножения матриц.
+
+Все тесты пройдены успешно.
+
+\FloatBarrier
+\begin{longtable}{|
+		>{\centering\arraybackslash}m{.4\textwidth - 2\tabcolsep}|
+		>{\centering\arraybackslash}m{.3\textwidth - 2\tabcolsep}|
+		>{\centering\arraybackslash}m{.3\textwidth - 2\tabcolsep}|
+	}
+	\caption{Функциональные тесты}\label{tbl:timeData} \\\hline
+	Граф представленный матрицей смежности & Ожидаемая длина маршрута & Результат программы \\ \hline
+	\endfirsthead
+	\caption*{Продолжение таблицы~\ref{tbl:timeData} } \\\hline
+	Граф представленный матрицей смежности & Ожидаемая длина маршрута & Результат программы \\ \hline              
+	\endhead
+	\endfoot
+	$\begin{pmatrix}
+		 & 
+	\end{pmatrix}$ & 0 & 0 \\ \hline
+	$\begin{pmatrix}
+		10 
+	\end{pmatrix}$ & 0 & 0 \\ \hline
+	$\begin{pmatrix}
+		0 & 2 \\
+		2 & 0 
+	\end{pmatrix}$ & 2 & 2 \\ \hline
+	$\begin{pmatrix}
+		0 & 1 & 2 \\
+		1 & 0 & 3 \\
+		2 & 3 & 0
+	\end{pmatrix}$ & 6 & 6 \\ \hline
+\end{longtable}
+\FloatBarrier
+
+
+\section*{Вывод}
+
+В данном разеде были представлены средства реализации, листинг кода и функциональные тесты.
+
+\clearpage
