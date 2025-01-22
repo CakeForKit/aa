@@ -1,0 +1,146 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": true,
+        "File": "report.pdf"
+    },
+    "Session": {
+        "Bookmarks": [
+            {
+                "bookmarkNumber": 1,
+                "fileName": "../../../report_template (2)/settings.tex",
+                "lineNumber": 86,
+                "text": "settings.tex\n"
+            },
+            {
+                "bookmarkNumber": 1,
+                "fileName": "../../../ped22u691/lab_2/doc/tech_part.tex",
+                "lineNumber": 289,
+                "text": "tech_part.tex\n\\begin{table}[h]"
+            },
+            {
+                "bookmarkNumber": 1,
+                "fileName": "../../../../cg_cp_info/report/lib.bib",
+                "lineNumber": 8,
+                "text": "lib.bib\n@book{rodgersCG,"
+            }
+        ],
+        "CurrentFile": "report.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "../../../lab7/ped22u691/report/title.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 26
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "01_title.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            },
+            {
+                "Col": 23,
+                "EditorGroup": 0,
+                "FileName": "report.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 19
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "02_intro.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 2
+            },
+            {
+                "Col": 8,
+                "EditorGroup": 0,
+                "FileName": "03_analytic_part.tex",
+                "FirstLine": 58,
+                "FoldedLines": "",
+                "Line": 73
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "04_design_part.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 13
+            },
+            {
+                "Col": 33,
+                "EditorGroup": 0,
+                "FileName": "05_tech_part.tex",
+                "FirstLine": 150,
+                "FoldedLines": "14,39",
+                "Line": 178
+            },
+            {
+                "Col": 426,
+                "EditorGroup": 0,
+                "FileName": "06_experimental_part.tex",
+                "FirstLine": 146,
+                "FoldedLines": "39,56,73",
+                "Line": 172
+            },
+            {
+                "Col": 60,
+                "EditorGroup": 0,
+                "FileName": "07_conclusion.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 8
+            },
+            {
+                "Col": 10,
+                "EditorGroup": 0,
+                "FileName": "addition.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 6
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "additions.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "08_additions.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 1
+            },
+            {
+                "Col": 29,
+                "EditorGroup": 0,
+                "FileName": "lib.bib",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 24
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "links.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            }
+        ],
+        "MasterFile": "",
+        "VerticalSplit": true
+    }
+}

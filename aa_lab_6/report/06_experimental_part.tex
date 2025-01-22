@@ -10,16 +10,16 @@
 	\item {Процессор - AMD Ryzen 7 5800H with Radeon Graphics, 3201 МГц, ядер: 8, логических процессоров: 16;}
 \end{itemize}
 
-При проведении замеров времени ноутбук был включен в сеть электропитания, а не работал от аккамулятора, и были запущены только встроенное приложение окружения и система замеров времени.
+При проведении замеров времени ноутбук был включен в сеть электропитания, а не работал от аккумулятора, и были запущены только встроенное приложение окружения и система замеров времени.
 
 \section{Время выполнения алгоритмов}
 Для замера процессорного времени использовалась функция $process\_time\_ns(...)$ из библиотеки $time$\cite{python-time}).
 
 Замеры времени проводились по принципу: для одних входных данных проводилось 5 замеров и если относительная стандартная ошибка среднего (rse) была >= 5\%, то для этих данных замеры продолжались, в таблицу заносилось среднее значение.
 
-Был получен график зависимости времени работы агоритмов, полного перебора и муравьиного,  от количества узлов в графе \ref{img:timegr}.
+Был получен график зависимости времени работы алгоритмов, полного перебора и муравьиного,  от количества узлов в графе~\ref{img:timegr}.
 \FloatBarrier
-\imgw{0.9\textwidth}{timegr}{Зависимости времени работы агоритмов, полного перебора и муравьиного,  от количества узлов в графе}
+\imgw{0.9\textwidth}{timegr}{Зависимости времени работы алгоритмов, полного перебора и муравьиного,  от количества узлов в графе}
 \FloatBarrier
 
 По результатам замеров времени можно сделать вывод о том, что при размерах матрицы больших 10 муравьиный алгоритм работает быстрее, чем алгоритм использующий метод полного перебора.
@@ -30,8 +30,8 @@
 
 Параметризация муравьиного алгоритма проводилась по параметрам
 \begin{itemize}
- 	\item коэффицент жадности алгоритма,  $a \in {0.1, 0.25, 0.5, 0.75, 0.9}$;
- 	\item коэффицент испарения феромона,  $p \in {0.1, 0.25, 0.5, 0.75, 0.9}$;
+ 	\item коэффициент жадности алгоритма,  $a \in {0.1, 0.25, 0.5, 0.75, 0.9}$;
+ 	\item коэффициент испарения феромона,  $p \in {0.1, 0.25, 0.5, 0.75, 0.9}$;
  	\item количество дней, рассматриваемых в алгоритме,  $t_max \in {5, 10, 50, 100, 200}$;
 \end{itemize}
 
@@ -94,12 +94,12 @@
 
 \FloatBarrier
 \begin{longtable}{|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.2\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.2\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
 	}
 	\caption{Результаты параметризации муравьиного алгоритма для графа 1 (фрагмент)}\label{tbl:ress1} \\\hline
 	a & p & t\_max &  max\_diff & avg\_diff & mid\_diff \\ \hline
@@ -119,12 +119,12 @@
 \FloatBarrier
 \FloatBarrier
 \begin{longtable}{|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.2\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.2\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
 	}
 	\caption{Результаты параметризации муравьиного алгоритма для графа 2 (фрагмент)}\label{tbl:ress2} \\\hline
 	a & p & t\_max &  max\_diff & avg\_diff & mid\_diff \\ \hline
@@ -144,12 +144,12 @@
 \FloatBarrier
 \FloatBarrier
 \begin{longtable}{|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.2\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
-		>{\centering\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.1\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.2\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
+		>{\raggedleft\arraybackslash}m{.25\textwidth - 2\tabcolsep}|
 	}
 	\caption{Результаты параметризации муравьиного алгоритма для графа 3 (фрагмент)}\label{tbl:ress3} \\\hline
 	a & p & t\_max &  max\_diff & avg\_diff & mid\_diff \\ \hline
