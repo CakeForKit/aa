@@ -1,0 +1,35 @@
+\begin{longtable}{|
+		>{\raggedright\arraybackslash}p{.2\textwidth - 2\tabcolsep}|
+		>{\raggedright\arraybackslash}p{.2\textwidth - 2\tabcolsep}|
+		>{\raggedright\arraybackslash}p{.3\textwidth - 2\tabcolsep}|
+		>{\raggedright\arraybackslash}p{.3\textwidth - 2\tabcolsep}|
+	}
+	\caption{Функциональные тесты}\label{tbl:tests} \\\hline
+	№ заявки & № потока & время начала обслучивания заявки & время конца обслуживания заявки \\\hline
+	\endfirsthead
+	\caption{Функциональные тесты (продолжение)} \\\hline
+	№ заявки & № потока & время начала обслучивания заявки & время конца обслуживания заявки \\\hline                    
+	\endhead
+	\endfoot
+	0 & 1 & 238 & 250 \\\hline
+0 & 2 & 251 & 254 \\\hline
+0 & 3 & 254 & 373 \\\hline
+1 & 1 & 256 & 256 \\\hline
+2 & 1 & 257 & 257 \\\hline
+3 & 1 & 257 & 257 \\\hline
+4 & 1 & 258 & 258 \\\hline
+5 & 1 & 258 & 258 \\\hline
+6 & 1 & 259 & 259 \\\hline
+7 & 1 & 259 & 259 \\\hline
+8 & 1 & 260 & 260 \\\hline
+9 & 1 & 260 & 260 \\\hline
+10 & 1 & 261 & 280 \\\hline
+1 & 2 & 265 & 266 \\\hline
+2 & 2 & 266 & 267 \\\hline
+\cdots & \cdots & \cdots & \cdots \\\hline
+496 & 3 & 36204 & 36270 \\\hline
+497 & 3 & 36271 & 36339 \\\hline
+498 & 3 & 36340 & 36404 \\\hline
+499 & 3 & 36404 & 36471 \\\hline
+
+\end{longtable}

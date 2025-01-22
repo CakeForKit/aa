@@ -1,0 +1,1051 @@
+p3 try open q3: 226
+            q3: 240
+            q3: 241
+            q3: 241
+            q3: 241
+            q3: 242
+            q3: 242
+            q3: 242
+            q3: 242
+            q3: 243
+            q3: 243
+            q3: 243
+            q3: 243
+            q3: 244
+            q3: 244
+            q3: 244
+            q3: 244
+            q3: 245
+            q3: 245
+            q3: 245
+            q3: 245
+            q3: 246
+            q3: 246
+            q3: 246
+            q3: 246
+            q3: 247
+            q3: 247
+            q3: 247
+            q3: 247
+            q3: 247
+            q3: 248
+            q3: 248
+            q3: 248
+            q3: 248
+            q3: 249
+            q3: 249
+            q3: 249
+            q3: 249
+            q3: 250
+            q3: 250
+            q3: 250
+            q3: 250
+            q3: 251
+            q3: 251
+            q3: 251
+            q3: 251
+            q3: 252
+            q3: 252
+            q3: 252
+            q3: 252
+            q3: 253
+            q3: 253
+            q3: 254
+p3 try open q3: 375
+            q3: 376
+p3 try open q3: 467
+            q3: 467
+p3 try open q3: 670
+            q3: 670
+p3 try open q3: 764
+            q3: 764
+p3 try open q3: 839
+            q3: 839
+p3 try open q3: 905
+            q3: 906
+p3 try open q3: 970
+            q3: 970
+p3 try open q3: 1052
+            q3: 1053
+p3 try open q3: 1136
+            q3: 1137
+p3 try open q3: 1203
+            q3: 1203
+p3 try open q3: 1272
+            q3: 1272
+p3 try open q3: 1432
+            q3: 1432
+p3 try open q3: 1505
+            q3: 1505
+p3 try open q3: 1672
+            q3: 1672
+p3 try open q3: 1747
+            q3: 1747
+p3 try open q3: 1920
+            q3: 1920
+p3 try open q3: 2034
+            q3: 2034
+p3 try open q3: 2104
+            q3: 2104
+p3 try open q3: 2174
+            q3: 2174
+p3 try open q3: 2244
+            q3: 2245
+p3 try open q3: 2358
+            q3: 2358
+p3 try open q3: 2428
+            q3: 2428
+p3 try open q3: 2494
+            q3: 2495
+p3 try open q3: 2561
+            q3: 2561
+p3 try open q3: 2676
+            q3: 2676
+p3 try open q3: 2747
+            q3: 2748
+p3 try open q3: 2815
+            q3: 2816
+p3 try open q3: 2882
+            q3: 2882
+p3 try open q3: 2949
+            q3: 2949
+p3 try open q3: 3015
+            q3: 3015
+p3 try open q3: 3082
+            q3: 3083
+p3 try open q3: 3247
+            q3: 3247
+p3 try open q3: 3319
+            q3: 3319
+p3 try open q3: 3387
+            q3: 3387
+p3 try open q3: 3456
+            q3: 3457
+p3 try open q3: 3565
+            q3: 3565
+p3 try open q3: 3635
+            q3: 3636
+p3 try open q3: 3719
+            q3: 3720
+p3 try open q3: 3912
+            q3: 3912
+p3 try open q3: 4022
+            q3: 4023
+p3 try open q3: 4129
+            q3: 4130
+p3 try open q3: 4228
+            q3: 4228
+p3 try open q3: 4330
+            q3: 4331
+p3 try open q3: 4433
+            q3: 4434
+p3 try open q3: 4626
+            q3: 4627
+p3 try open q3: 4701
+            q3: 4701
+p3 try open q3: 4770
+            q3: 4770
+p3 try open q3: 4836
+            q3: 4836
+p3 try open q3: 4900
+            q3: 4900
+p3 try open q3: 4968
+            q3: 4968
+p3 try open q3: 5033
+            q3: 5033
+p3 try open q3: 5097
+            q3: 5098
+p3 try open q3: 5163
+            q3: 5164
+p3 try open q3: 5229
+            q3: 5229
+p3 try open q3: 5294
+            q3: 5294
+p3 try open q3: 5360
+            q3: 5360
+p3 try open q3: 5427
+            q3: 5427
+p3 try open q3: 5498
+            q3: 5499
+p3 try open q3: 5567
+            q3: 5568
+p3 try open q3: 5634
+            q3: 5634
+p3 try open q3: 5741
+            q3: 5742
+p3 try open q3: 5811
+            q3: 5811
+p3 try open q3: 5877
+            q3: 5877
+p3 try open q3: 5944
+            q3: 5944
+p3 try open q3: 6008
+            q3: 6008
+p3 try open q3: 6074
+            q3: 6074
+p3 try open q3: 6141
+            q3: 6141
+p3 try open q3: 6208
+            q3: 6208
+p3 try open q3: 6273
+            q3: 6273
+p3 try open q3: 6338
+            q3: 6338
+p3 try open q3: 6402
+            q3: 6402
+p3 try open q3: 6466
+            q3: 6466
+p3 try open q3: 6532
+            q3: 6532
+p3 try open q3: 6614
+            q3: 6614
+p3 try open q3: 6681
+            q3: 6681
+p3 try open q3: 6791
+            q3: 6791
+p3 try open q3: 6933
+            q3: 6934
+p3 try open q3: 6996
+            q3: 6996
+p3 try open q3: 7056
+            q3: 7056
+p3 try open q3: 7114
+            q3: 7114
+p3 try open q3: 7171
+            q3: 7171
+p3 try open q3: 7231
+            q3: 7231
+p3 try open q3: 7289
+            q3: 7289
+p3 try open q3: 7349
+            q3: 7349
+p3 try open q3: 7409
+            q3: 7409
+p3 try open q3: 7467
+            q3: 7467
+p3 try open q3: 7525
+            q3: 7525
+p3 try open q3: 7582
+            q3: 7582
+p3 try open q3: 7640
+            q3: 7640
+p3 try open q3: 7699
+            q3: 7700
+p3 try open q3: 7881
+            q3: 7881
+p3 try open q3: 8043
+            q3: 8044
+p3 try open q3: 8121
+            q3: 8121
+p3 try open q3: 8193
+            q3: 8193
+p3 try open q3: 8264
+            q3: 8265
+p3 try open q3: 8333
+            q3: 8334
+p3 try open q3: 8406
+            q3: 8406
+p3 try open q3: 8476
+            q3: 8476
+p3 try open q3: 8546
+            q3: 8546
+p3 try open q3: 8616
+            q3: 8616
+p3 try open q3: 8711
+            q3: 8711
+p3 try open q3: 8788
+            q3: 8789
+p3 try open q3: 8878
+            q3: 8878
+p3 try open q3: 8943
+            q3: 8943
+p3 try open q3: 9000
+            q3: 9000
+p3 try open q3: 9059
+            q3: 9059
+p3 try open q3: 9114
+            q3: 9114
+p3 try open q3: 9172
+            q3: 9172
+p3 try open q3: 9229
+            q3: 9230
+p3 try open q3: 9472
+            q3: 9473
+p3 try open q3: 9534
+            q3: 9534
+p3 try open q3: 9667
+            q3: 9667
+p3 try open q3: 9744
+            q3: 9744
+p3 try open q3: 9805
+            q3: 9805
+p3 try open q3: 9866
+            q3: 9866
+p3 try open q3: 9974
+            q3: 9975
+p3 try open q3: 10124
+            q3: 10125
+p3 try open q3: 10188
+            q3: 10189
+p3 try open q3: 10248
+            q3: 10248
+p3 try open q3: 10307
+            q3: 10307
+p3 try open q3: 10364
+            q3: 10364
+p3 try open q3: 10421
+            q3: 10421
+p3 try open q3: 10476
+            q3: 10476
+p3 try open q3: 10552
+            q3: 10552
+p3 try open q3: 10641
+            q3: 10641
+p3 try open q3: 10699
+            q3: 10699
+p3 try open q3: 10829
+            q3: 10829
+p3 try open q3: 10908
+            q3: 10908
+p3 try open q3: 10969
+            q3: 10969
+p3 try open q3: 11027
+            q3: 11027
+p3 try open q3: 11083
+            q3: 11084
+p3 try open q3: 11142
+            q3: 11142
+p3 try open q3: 11197
+            q3: 11197
+p3 try open q3: 11252
+            q3: 11253
+p3 try open q3: 11308
+            q3: 11308
+p3 try open q3: 11363
+            q3: 11364
+p3 try open q3: 11419
+            q3: 11420
+p3 try open q3: 11477
+            q3: 11477
+p3 try open q3: 11533
+            q3: 11533
+p3 try open q3: 11616
+            q3: 11616
+p3 try open q3: 11748
+            q3: 11748
+p3 try open q3: 11808
+            q3: 11809
+p3 try open q3: 11869
+            q3: 11869
+p3 try open q3: 11925
+            q3: 11926
+p3 try open q3: 11982
+            q3: 11983
+p3 try open q3: 12038
+            q3: 12038
+p3 try open q3: 12170
+            q3: 12171
+p3 try open q3: 12234
+            q3: 12234
+p3 try open q3: 12294
+            q3: 12295
+p3 try open q3: 12353
+            q3: 12353
+p3 try open q3: 12410
+            q3: 12410
+p3 try open q3: 12468
+            q3: 12468
+p3 try open q3: 12525
+            q3: 12526
+p3 try open q3: 12626
+            q3: 12627
+p3 try open q3: 12686
+            q3: 12687
+p3 try open q3: 12743
+            q3: 12743
+p3 try open q3: 12799
+            q3: 12799
+p3 try open q3: 12855
+            q3: 12855
+p3 try open q3: 12911
+            q3: 12911
+p3 try open q3: 12968
+            q3: 12968
+p3 try open q3: 13024
+            q3: 13024
+p3 try open q3: 13079
+            q3: 13080
+p3 try open q3: 13166
+            q3: 13166
+p3 try open q3: 13245
+            q3: 13245
+p3 try open q3: 13302
+            q3: 13302
+p3 try open q3: 13357
+            q3: 13357
+p3 try open q3: 13412
+            q3: 13413
+p3 try open q3: 13467
+            q3: 13467
+p3 try open q3: 13539
+            q3: 13540
+p3 try open q3: 13673
+            q3: 13674
+p3 try open q3: 13746
+            q3: 13747
+p3 try open q3: 13817
+            q3: 13817
+p3 try open q3: 13888
+            q3: 13888
+p3 try open q3: 14016
+            q3: 14017
+p3 try open q3: 14075
+            q3: 14075
+p3 try open q3: 14133
+            q3: 14133
+p3 try open q3: 14190
+            q3: 14191
+p3 try open q3: 14246
+            q3: 14246
+p3 try open q3: 14305
+            q3: 14305
+p3 try open q3: 14362
+            q3: 14363
+p3 try open q3: 14419
+            q3: 14419
+p3 try open q3: 14475
+            q3: 14475
+p3 try open q3: 14533
+            q3: 14533
+p3 try open q3: 14626
+            q3: 14626
+p3 try open q3: 14686
+            q3: 14686
+p3 try open q3: 14744
+            q3: 14744
+p3 try open q3: 14802
+            q3: 14802
+p3 try open q3: 14860
+            q3: 14861
+p3 try open q3: 14917
+            q3: 14917
+p3 try open q3: 14972
+            q3: 14972
+p3 try open q3: 15028
+            q3: 15028
+p3 try open q3: 15085
+            q3: 15086
+p3 try open q3: 15142
+            q3: 15142
+p3 try open q3: 15198
+            q3: 15198
+p3 try open q3: 15253
+            q3: 15254
+p3 try open q3: 15311
+            q3: 15312
+p3 try open q3: 15368
+            q3: 15368
+p3 try open q3: 15424
+            q3: 15424
+p3 try open q3: 15479
+            q3: 15479
+p3 try open q3: 15537
+            q3: 15537
+p3 try open q3: 15594
+            q3: 15594
+p3 try open q3: 15652
+            q3: 15652
+p3 try open q3: 15708
+            q3: 15708
+p3 try open q3: 15765
+            q3: 15765
+p3 try open q3: 15822
+            q3: 15822
+p3 try open q3: 15877
+            q3: 15878
+p3 try open q3: 15935
+            q3: 15935
+p3 try open q3: 16002
+            q3: 16003
+p3 try open q3: 16062
+            q3: 16063
+p3 try open q3: 16120
+            q3: 16120
+p3 try open q3: 16272
+            q3: 16273
+p3 try open q3: 16346
+            q3: 16347
+p3 try open q3: 16418
+            q3: 16418
+p3 try open q3: 16487
+            q3: 16488
+p3 try open q3: 16555
+            q3: 16555
+p3 try open q3: 16625
+            q3: 16626
+p3 try open q3: 16696
+            q3: 16696
+p3 try open q3: 16766
+            q3: 16766
+p3 try open q3: 16835
+            q3: 16835
+p3 try open q3: 16905
+            q3: 16906
+p3 try open q3: 16967
+            q3: 16967
+p3 try open q3: 17117
+            q3: 17117
+p3 try open q3: 17192
+            q3: 17192
+p3 try open q3: 17261
+            q3: 17262
+p3 try open q3: 17332
+            q3: 17333
+p3 try open q3: 17402
+            q3: 17402
+p3 try open q3: 17470
+            q3: 17471
+p3 try open q3: 17541
+            q3: 17541
+p3 try open q3: 17610
+            q3: 17610
+p3 try open q3: 17681
+            q3: 17681
+p3 try open q3: 17761
+            q3: 17761
+p3 try open q3: 17835
+            q3: 17836
+p3 try open q3: 17903
+            q3: 17903
+p3 try open q3: 17969
+            q3: 17970
+p3 try open q3: 18027
+            q3: 18027
+p3 try open q3: 18110
+            q3: 18111
+p3 try open q3: 18169
+            q3: 18169
+p3 try open q3: 18226
+            q3: 18226
+p3 try open q3: 18282
+            q3: 18282
+p3 try open q3: 18340
+            q3: 18340
+p3 try open q3: 18396
+            q3: 18396
+p3 try open q3: 18453
+            q3: 18453
+p3 try open q3: 18509
+            q3: 18509
+p3 try open q3: 18566
+            q3: 18566
+p3 try open q3: 18624
+            q3: 18624
+p3 try open q3: 18679
+            q3: 18679
+p3 try open q3: 18735
+            q3: 18736
+p3 try open q3: 18870
+            q3: 18870
+p3 try open q3: 18930
+            q3: 18931
+p3 try open q3: 19068
+            q3: 19068
+p3 try open q3: 19154
+            q3: 19154
+p3 try open q3: 19218
+            q3: 19218
+p3 try open q3: 19276
+            q3: 19276
+p3 try open q3: 19334
+            q3: 19334
+p3 try open q3: 19390
+            q3: 19390
+p3 try open q3: 19449
+            q3: 19449
+p3 try open q3: 19507
+            q3: 19507
+p3 try open q3: 19563
+            q3: 19563
+p3 try open q3: 19621
+            q3: 19621
+p3 try open q3: 19677
+            q3: 19677
+p3 try open q3: 19733
+            q3: 19733
+p3 try open q3: 19804
+            q3: 19804
+p3 try open q3: 19962
+            q3: 19962
+p3 try open q3: 20028
+            q3: 20028
+p3 try open q3: 20086
+            q3: 20086
+p3 try open q3: 20163
+            q3: 20163
+p3 try open q3: 20221
+            q3: 20221
+p3 try open q3: 20279
+            q3: 20279
+p3 try open q3: 20338
+            q3: 20338
+p3 try open q3: 20395
+            q3: 20395
+p3 try open q3: 20453
+            q3: 20454
+p3 try open q3: 20511
+            q3: 20511
+p3 try open q3: 20567
+            q3: 20567
+p3 try open q3: 20625
+            q3: 20625
+p3 try open q3: 20683
+            q3: 20683
+p3 try open q3: 20740
+            q3: 20740
+p3 try open q3: 20797
+            q3: 20797
+p3 try open q3: 20854
+            q3: 20854
+p3 try open q3: 20912
+            q3: 20913
+p3 try open q3: 20970
+            q3: 20971
+p3 try open q3: 21028
+            q3: 21028
+p3 try open q3: 21098
+            q3: 21099
+p3 try open q3: 21183
+            q3: 21184
+p3 try open q3: 21243
+            q3: 21243
+p3 try open q3: 21299
+            q3: 21299
+p3 try open q3: 21356
+            q3: 21356
+p3 try open q3: 21414
+            q3: 21415
+p3 try open q3: 21471
+            q3: 21472
+p3 try open q3: 21530
+            q3: 21530
+p3 try open q3: 21587
+            q3: 21587
+p3 try open q3: 21645
+            q3: 21645
+p3 try open q3: 21703
+            q3: 21703
+p3 try open q3: 21759
+            q3: 21759
+p3 try open q3: 21817
+            q3: 21817
+p3 try open q3: 21874
+            q3: 21874
+p3 try open q3: 21931
+            q3: 21931
+p3 try open q3: 21987
+            q3: 21988
+p3 try open q3: 22046
+            q3: 22046
+p3 try open q3: 22150
+            q3: 22150
+p3 try open q3: 22210
+            q3: 22211
+p3 try open q3: 22266
+            q3: 22266
+p3 try open q3: 22323
+            q3: 22323
+p3 try open q3: 22378
+            q3: 22379
+p3 try open q3: 22435
+            q3: 22435
+p3 try open q3: 22656
+            q3: 22656
+p3 try open q3: 22717
+            q3: 22718
+p3 try open q3: 22777
+            q3: 22777
+p3 try open q3: 22834
+            q3: 22835
+p3 try open q3: 22890
+            q3: 22890
+p3 try open q3: 22949
+            q3: 22949
+p3 try open q3: 23007
+            q3: 23007
+p3 try open q3: 23064
+            q3: 23064
+p3 try open q3: 23121
+            q3: 23121
+p3 try open q3: 23178
+            q3: 23178
+p3 try open q3: 23234
+            q3: 23234
+p3 try open q3: 23292
+            q3: 23292
+p3 try open q3: 23349
+            q3: 23349
+p3 try open q3: 23443
+            q3: 23444
+p3 try open q3: 23523
+            q3: 23523
+p3 try open q3: 23598
+            q3: 23599
+p3 try open q3: 23674
+            q3: 23674
+p3 try open q3: 23761
+            q3: 23761
+p3 try open q3: 23834
+            q3: 23834
+p3 try open q3: 23905
+            q3: 23905
+p3 try open q3: 23971
+            q3: 23972
+p3 try open q3: 24029
+            q3: 24029
+p3 try open q3: 24084
+            q3: 24085
+p3 try open q3: 24142
+            q3: 24142
+p3 try open q3: 24199
+            q3: 24200
+p3 try open q3: 24353
+            q3: 24353
+p3 try open q3: 24414
+            q3: 24414
+p3 try open q3: 24471
+            q3: 24471
+p3 try open q3: 24530
+            q3: 24530
+p3 try open q3: 24635
+            q3: 24635
+p3 try open q3: 24695
+            q3: 24695
+p3 try open q3: 24753
+            q3: 24754
+p3 try open q3: 24811
+            q3: 24811
+p3 try open q3: 24868
+            q3: 24869
+p3 try open q3: 24925
+            q3: 24925
+p3 try open q3: 24984
+            q3: 24984
+p3 try open q3: 25040
+            q3: 25041
+p3 try open q3: 25097
+            q3: 25097
+p3 try open q3: 25153
+            q3: 25153
+p3 try open q3: 25209
+            q3: 25209
+p3 try open q3: 25266
+            q3: 25266
+p3 try open q3: 25322
+            q3: 25322
+p3 try open q3: 25380
+            q3: 25381
+p3 try open q3: 25437
+            q3: 25437
+p3 try open q3: 25495
+            q3: 25495
+p3 try open q3: 25551
+            q3: 25551
+p3 try open q3: 25681
+            q3: 25681
+p3 try open q3: 25741
+            q3: 25741
+p3 try open q3: 25823
+            q3: 25823
+p3 try open q3: 25882
+            q3: 25882
+p3 try open q3: 25969
+            q3: 25970
+p3 try open q3: 26031
+            q3: 26031
+p3 try open q3: 26091
+            q3: 26091
+p3 try open q3: 26148
+            q3: 26148
+p3 try open q3: 26207
+            q3: 26207
+p3 try open q3: 26281
+            q3: 26282
+p3 try open q3: 26342
+            q3: 26342
+p3 try open q3: 26397
+            q3: 26398
+p3 try open q3: 26492
+            q3: 26492
+p3 try open q3: 26662
+            q3: 26662
+p3 try open q3: 26723
+            q3: 26723
+p3 try open q3: 26782
+            q3: 26782
+p3 try open q3: 26839
+            q3: 26839
+p3 try open q3: 26897
+            q3: 26897
+p3 try open q3: 26954
+            q3: 26954
+p3 try open q3: 27011
+            q3: 27011
+p3 try open q3: 27068
+            q3: 27068
+p3 try open q3: 27128
+            q3: 27128
+p3 try open q3: 27186
+            q3: 27186
+p3 try open q3: 27244
+            q3: 27244
+p3 try open q3: 27303
+            q3: 27303
+p3 try open q3: 27361
+            q3: 27361
+p3 try open q3: 27418
+            q3: 27418
+p3 try open q3: 27627
+            q3: 27628
+p3 try open q3: 27692
+            q3: 27692
+p3 try open q3: 27788
+            q3: 27788
+p3 try open q3: 27878
+            q3: 27878
+p3 try open q3: 27938
+            q3: 27938
+p3 try open q3: 28002
+            q3: 28002
+p3 try open q3: 28076
+            q3: 28076
+p3 try open q3: 28243
+            q3: 28243
+p3 try open q3: 28323
+            q3: 28323
+p3 try open q3: 28397
+            q3: 28397
+p3 try open q3: 28675
+            q3: 28676
+p3 try open q3: 28877
+            q3: 28878
+p3 try open q3: 29049
+            q3: 29049
+p3 try open q3: 29111
+            q3: 29111
+p3 try open q3: 29171
+            q3: 29171
+p3 try open q3: 29229
+            q3: 29229
+p3 try open q3: 29287
+            q3: 29287
+p3 try open q3: 29345
+            q3: 29345
+p3 try open q3: 29402
+            q3: 29403
+p3 try open q3: 29459
+            q3: 29459
+p3 try open q3: 29517
+            q3: 29517
+p3 try open q3: 29601
+            q3: 29601
+p3 try open q3: 29661
+            q3: 29661
+p3 try open q3: 29720
+            q3: 29720
+p3 try open q3: 29777
+            q3: 29777
+p3 try open q3: 29835
+            q3: 29835
+p3 try open q3: 29892
+            q3: 29893
+p3 try open q3: 29949
+            q3: 29949
+p3 try open q3: 30007
+            q3: 30008
+p3 try open q3: 30063
+            q3: 30063
+p3 try open q3: 30120
+            q3: 30120
+p3 try open q3: 30262
+            q3: 30262
+p3 try open q3: 30321
+            q3: 30321
+p3 try open q3: 30378
+            q3: 30378
+p3 try open q3: 30435
+            q3: 30435
+p3 try open q3: 30661
+            q3: 30661
+p3 try open q3: 30733
+            q3: 30733
+p3 try open q3: 30796
+            q3: 30796
+p3 try open q3: 30859
+            q3: 30859
+p3 try open q3: 30932
+            q3: 30933
+p3 try open q3: 30995
+            q3: 30995
+p3 try open q3: 31054
+            q3: 31054
+p3 try open q3: 31111
+            q3: 31111
+p3 try open q3: 31170
+            q3: 31170
+p3 try open q3: 31228
+            q3: 31229
+p3 try open q3: 31287
+            q3: 31288
+p3 try open q3: 31348
+            q3: 31348
+p3 try open q3: 31406
+            q3: 31406
+p3 try open q3: 31464
+            q3: 31465
+p3 try open q3: 31523
+            q3: 31523
+p3 try open q3: 31606
+            q3: 31606
+p3 try open q3: 31669
+            q3: 31669
+p3 try open q3: 31728
+            q3: 31729
+p3 try open q3: 31786
+            q3: 31786
+p3 try open q3: 31844
+            q3: 31844
+p3 try open q3: 31906
+            q3: 31906
+p3 try open q3: 31965
+            q3: 31965
+p3 try open q3: 32023
+            q3: 32024
+p3 try open q3: 32166
+            q3: 32167
+p3 try open q3: 32228
+            q3: 32228
+p3 try open q3: 32288
+            q3: 32288
+p3 try open q3: 32373
+            q3: 32373
+p3 try open q3: 32435
+            q3: 32435
+p3 try open q3: 32495
+            q3: 32495
+p3 try open q3: 32567
+            q3: 32567
+p3 try open q3: 32630
+            q3: 32631
+p3 try open q3: 32689
+            q3: 32690
+p3 try open q3: 32747
+            q3: 32747
+p3 try open q3: 32806
+            q3: 32807
+p3 try open q3: 32864
+            q3: 32864
+p3 try open q3: 32941
+            q3: 32941
+p3 try open q3: 32997
+            q3: 32998
+p3 try open q3: 33055
+            q3: 33055
+p3 try open q3: 33125
+            q3: 33125
+p3 try open q3: 33184
+            q3: 33184
+p3 try open q3: 33244
+            q3: 33244
+p3 try open q3: 33301
+            q3: 33301
+p3 try open q3: 33361
+            q3: 33361
+p3 try open q3: 33419
+            q3: 33419
+p3 try open q3: 33476
+            q3: 33477
+p3 try open q3: 33645
+            q3: 33645
+p3 try open q3: 33709
+            q3: 33709
+p3 try open q3: 33770
+            q3: 33770
+p3 try open q3: 33829
+            q3: 33830
+p3 try open q3: 33887
+            q3: 33887
+p3 try open q3: 33945
+            q3: 33945
+p3 try open q3: 34003
+            q3: 34003
+p3 try open q3: 34060
+            q3: 34060
+p3 try open q3: 34119
+            q3: 34120
+p3 try open q3: 34175
+            q3: 34176
+p3 try open q3: 34235
+            q3: 34235
+p3 try open q3: 34292
+            q3: 34293
+p3 try open q3: 34350
+            q3: 34350
+p3 try open q3: 34409
+            q3: 34409
+p3 try open q3: 34465
+            q3: 34465
+p3 try open q3: 34540
+            q3: 34540
+p3 try open q3: 34623
+            q3: 34623
+p3 try open q3: 34686
+            q3: 34686
+p3 try open q3: 34744
+            q3: 34745
+p3 try open q3: 34802
+            q3: 34802
+p3 try open q3: 34860
+            q3: 34860
+p3 try open q3: 34917
+            q3: 34917
+p3 try open q3: 34976
+            q3: 34976
+p3 try open q3: 35033
+            q3: 35033
+p3 try open q3: 35203
+            q3: 35203
+p3 try open q3: 35276
+            q3: 35277
+p3 try open q3: 35347
+            q3: 35347
+p3 try open q3: 35418
+            q3: 35419
+p3 try open q3: 35487
+            q3: 35488
+p3 try open q3: 35592
+            q3: 35592
+p3 try open q3: 35665
+            q3: 35665
+p3 try open q3: 35735
+            q3: 35735
+p3 try open q3: 35803
+            q3: 35803
+p3 try open q3: 35871
+            q3: 35871
+p3 try open q3: 35939
+            q3: 35939
+p3 try open q3: 36004
+            q3: 36004
+p3 try open q3: 36073
+            q3: 36074
+p3 try open q3: 36139
+            q3: 36139
+p3 try open q3: 36204
+            q3: 36204
+p3 try open q3: 36271
+            q3: 36271
+p3 try open q3: 36340
+            q3: 36340
+p3 try open q3: 36404
+            q3: 36404
